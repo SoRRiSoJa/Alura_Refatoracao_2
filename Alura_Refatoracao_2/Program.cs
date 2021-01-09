@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Alura_Refatoracao_2.Aula_1;
+using System;
 
 namespace Alura_Refatoracao_2
 {
@@ -6,7 +7,12 @@ namespace Alura_Refatoracao_2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            Aluno aluno = new Aluno();
+            aluno.Adcionar(new Curso("JavaScript Básico"));
+            aluno.Adcionar(new Curso("C# Intermediário"));
+            aluno.Adcionar(new Curso("Java Avançado"));
+
         }
     }
 }

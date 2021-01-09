@@ -23,10 +23,8 @@ namespace Alura_Refatoracao_2.Aula_1
 
             IList<Pedido> pedidos = new List<Pedido> { pedido1, pedido2 };
 
-            decimal comprasTotaisCliente =
-                pedidos
-                .Where(p => p.Cliente.Nome.Equals("José da Silva"))
-                .Sum(p => p.Itens.Sum(i => i.Total));
+            decimal comprasTotaisCliente = cliente.TotalCompras;
+                
         }
     }
 
@@ -45,7 +43,9 @@ namespace Alura_Refatoracao_2.Aula_1
 
         public void AddItem(string produto, decimal precoUnitario, int quantidade)
         {
-            itens.Add(new Item(produto, precoUnitario, quantidade));
+            Item item = new Item(produto, precoUnitario, quantidade);
+            itens.Add(item);
+            cliente.AddItem(item);
         }
 
         public void RemoveItem(string produto)
@@ -54,7 +54,9 @@ namespace Alura_Refatoracao_2.Aula_1
             if (item != null)
             {
                 itens.Remove(item);
+                cliente.Remove(item);
             }
+
         }
     }
 

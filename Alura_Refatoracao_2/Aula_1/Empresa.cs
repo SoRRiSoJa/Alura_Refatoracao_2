@@ -15,8 +15,8 @@ namespace Alura_Refatoracao_2.Aula_1
                 while ((linha = streamReader.ReadLine()) != null)
                 {
                     string[] fields = linha.Split(',');
-                    Cliente cli = new Cliente(int.Parse(fields[0]), fields[1],fields[2],fields[3]);
-                    
+                    Cliente cli = new Cliente(int.Parse(fields[0]), fields[1], fields[2], fields[3]);
+
                     Console.WriteLine("Dados do Cliente");
                     Console.WriteLine("================");
                     Console.WriteLine("ID: " + cli.Id);
@@ -27,4 +27,5 @@ namespace Alura_Refatoracao_2.Aula_1
                 }
             }
         }
+    }
 }

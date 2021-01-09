@@ -6,17 +6,23 @@ namespace Alura_Refatoracao_2.Aula_1
 {
     class LSMClienteP
     {
-        readonly string nome;
-        readonly decimal totalCompras;
+        public string Nome { get; set; }
+        public decimal TotalCompras { get; set; }
 
-        public string Nome => nome;
-
-        public decimal TotalCompras { get=>totalCompras; }
 
         public LSMClienteP(string nome)
         {
-            this.nome = nome;
+            Nome = nome;
         }
 
+        public void AddItem(Item item)
+        {
+            TotalCompras += item.Total;
+        }
+
+        internal void Remove(Item item)
+        {
+            TotalCompras -= item.Total;
+        }
     }
 }
